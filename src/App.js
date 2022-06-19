@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 
 function App() {
@@ -25,10 +26,15 @@ function App() {
     },
   ];
 
+  const getExpenseData = (enteredExpenseData) => {
+    console.log(enteredExpenseData);
+  }
+
   return (
     <div>
       <h2>Let's get started</h2>
-      <Expenses items={expenses}></Expenses>
+      <NewExpense onSaveExpense={getExpenseData} />
+      <Expenses items={expenses} />
     </div>
   );
 }
